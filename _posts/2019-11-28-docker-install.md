@@ -60,27 +60,27 @@ tags:
 
   2. 安装指定版本`docker`
 
-     1. 首先查看可用的版本
+     * 首先查看可用的版本
 
-        ```
-        yum list docker-ce --showduplicates | sort -r
-        ```
+     ```
+     yum list docker-ce --showduplicates | sort -r
+     ```
 
-     2. 安装指定版本的`docker`
+     * 安装指定版本的`docker`
 
-        ```
-        sudo yum install docker-ce-<VERSION_STRING> \
-             docker-ce-cli-<VERSION_STRING> \
-             containerd.io
-        ```
+     ```
+     sudo yum install docker-ce-<VERSION_STRING> \
+          docker-ce-cli-<VERSION_STRING> \
+          containerd.io
+     ```
 
-        例如:
+     * 例子
 
-        ```
-        sudo yum install docker-ce-19.03.5 \
-             docker-ce-cli-19.03.5 \
-             containerd.io
-        ```
+     ```
+     sudo yum install docker-ce-19.03.5 \
+          docker-ce-cli-19.03.5 \
+          containerd.io
+     ```
 
 #### 2. 从软件包安装
 
