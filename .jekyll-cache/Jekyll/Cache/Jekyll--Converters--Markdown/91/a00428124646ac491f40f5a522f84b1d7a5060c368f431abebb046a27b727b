@@ -1,0 +1,192 @@
+I"�"
+<h3 id="先决条件">先决条件</h3>
+
+<h4 id="1-首先卸载旧版本">1. 首先卸载旧版本</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="安装docker">安装docker</h3>
+
+<h4 id="1-使用yum安装">1. 使用yum安装</h4>
+
+<ul>
+  <li>
+    <p>设置存储库</p>
+
+    <ol>
+      <li>
+        <p>安装所需的软件包</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>sudo yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>
+        <p>设置<strong>稳定的</strong>存储库</p>
+      </li>
+    </ol>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>    sudo yum-config-manager \
+       --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <ol>
+      <li>
+        <p>启用</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo yum-config-manager --enable docker-ce-nightly
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>安装<code class="highlighter-rouge">Docker engine</code></p>
+
+    <ol>
+      <li>
+        <p>安装最新版<code class="highlighter-rouge">docker</code></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo yum install docker-ce docker-ce-cli containerd.io
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>
+        <p>安装指定版本<code class="highlighter-rouge">docker</code></p>
+
+        <ol>
+          <li>
+            <p>首先查看可用的版本</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>yum list docker-ce --showduplicates | sort -r
+</pre></td></tr></tbody></table></code></pre></div>            </div>
+          </li>
+          <li>
+            <p>安装指定版本的<code class="highlighter-rouge">docker</code></p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io
+</pre></td></tr></tbody></table></code></pre></div>            </div>
+
+            <p>例如:</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo yum install docker-ce-19.03.5 docker-ce-cli-19.03.5 containerd.io
+</pre></td></tr></tbody></table></code></pre></div>            </div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="2-从软件包安装">2. 从软件包安装</h4>
+
+<ol>
+  <li>
+    <p>转到<code class="highlighter-rouge"> https://download.docker.com/linux/centos/7/x86_64/stable/Packages/</code> 并下载<code class="highlighter-rouge">.rpm</code>要安装的Docker版本的文件。</p>
+  </li>
+  <li>
+    <p>安装<code class="highlighter-rouge">Docker Engine-Community</code>，下面的路径更改为下载<code class="highlighter-rouge">Docker</code>软件包的路径。</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>   sudo yum install /path/to/package.rpm
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="启动测试docker">启动测试docker</h3>
+
+<h4 id="1-启动docker">1. 启动docker</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo systemctl start docker
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="2-通过运行-hello-world-映像来验证是否正确安装">2. 通过运行 <code class="highlighter-rouge">hello-world</code> 映像来验证是否正确安装</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker run hello-world
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="卸载docker-engine">卸载Docker Engine</h3>
+
+<h4 id="1-卸载docker软件包">1. 卸载Docker软件包</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo yum remove docker-ce
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="2-删除容器和镜像等数据">2. 删除容器和镜像等数据</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo rm -rf /var/lib/docker
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="配置docker-阿里镜像加速">配置docker 阿里镜像加速</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo vim /etc/docker/daemon.json
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>在<code class="highlighter-rouge">daemon.json</code>中键入以下内容</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>{
+  "registry-mirrors": ["https://b0kifnqu.mirror.aliyuncs.com"]
+}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>然后保存退出，通过:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> sudo systemctl restart docker
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>重启<code class="highlighter-rouge">docker</code>，之后通过:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo docker info
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>查看<code class="highlighter-rouge">docker</code>当前的配置，如果能够在打印出来的信息中看到：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre> Registry Mirrors:
+  https://b0kifnqu.mirror.aliyuncs.com/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>那么就证明配置成功</p>
+
+<p>设置<code class="highlighter-rouge">docker</code>开机自启动</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo systemctl enable docker
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET
