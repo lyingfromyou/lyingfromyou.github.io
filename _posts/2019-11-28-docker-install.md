@@ -1,17 +1,18 @@
 ---
 layout: post
 title: '搭建Docker环境'
-subtitle: 'docker的安装、卸载和配置'
+subtitle: '安装、卸载、配置Docker'
 author: 'Max'
 header-style: text
 tags:
   - Docker
   - liunx
---
+---
 
 ### 先决条件
 
 #### 1. 首先卸载旧版本
+
     sudo yum remove docker \
                       docker-client \
                       docker-client-latest \
@@ -21,12 +22,11 @@ tags:
                       docker-logrotate \
                       docker-engine
 
+### 安装 docker
 
-### 安装docker
+#### 1. 使用 yum 安装
 
-#### 1. 使用yum安装
-
-* 设置存储库
+- 设置存储库
 
   1. 安装所需的软件包
 
@@ -36,11 +36,12 @@ tags:
        lvm2
      ```
 
-  2.  设置**稳定的**存储库
+  2. 设置稳定的存储库
 
      ```
-      sudo yum-config-manager \
-         --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo
+     sudo yum-config-manager \
+         --add-repo \
+         https://download.docker.com/linux/centos/docker-ce.repo
      ```
 
   3. 启用
@@ -49,7 +50,7 @@ tags:
      sudo yum-config-manager --enable docker-ce-nightly
      ```
 
-* 安装`Docker engine`
+- 安装`Docker engine`
 
   1. 安装最新版`docker`
 
@@ -71,45 +72,39 @@ tags:
         sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
         ```
 
-        例如: 
+        例如:
 
         ```
         sudo yum install docker-ce-19.03.5 docker-ce-cli-19.03.5 containerd.io
         ```
 
-
-
 #### 2. 从软件包安装
 
-1.  转到` https://download.docker.com/linux/centos/7/x86_64/stable/Packages/` 并下载`.rpm`要安装的Docker版本的文件。 
+1.  转到`https://download.docker.com/linux/centos/7/x86_64/stable/Packages/` 并下载`.rpm`要安装的 Docker 版本的文件。
 
-2.  安装`Docker Engine-Community`，下面的路径更改为下载`Docker`软件包的路径。 
+2.  安装`Docker Engine-Community`，下面的路径更改为下载`Docker`软件包的路径。
 
-   ```
-   sudo yum install /path/to/package.rpm
-   ```
+```
+sudo yum install /path/to/package.rpm
+```
 
+### 启动测试 docker
 
-
-### 启动测试docker
-
-#### 1. 启动docker
+#### 1. 启动 docker
 
 ```
 sudo systemctl start docker
 ```
 
-#### 2. 通过运行 `hello-world` 映像来验证是否正确安装 
+#### 2. 通过运行 `hello-world` 映像来验证是否正确安装
 
 ```
 docker run hello-world
 ```
 
+### 卸载 Docker Engine
 
-
-### 卸载Docker Engine
-
-#### 1. 卸载Docker软件包
+#### 1. 卸载 Docker 软件包
 
 ```
 sudo yum remove docker-ce
@@ -121,9 +116,7 @@ sudo yum remove docker-ce
 sudo rm -rf /var/lib/docker
 ```
 
-
-
-### 配置docker 阿里镜像加速
+### 配置 docker 阿里镜像加速
 
 ```
 sudo vim /etc/docker/daemon.json
@@ -163,4 +156,3 @@ sudo docker info
 ```
 sudo systemctl enable docker
 ```
-
