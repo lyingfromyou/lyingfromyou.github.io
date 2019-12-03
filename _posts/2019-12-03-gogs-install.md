@@ -25,7 +25,7 @@ sudo docker run  -v /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime  -v /opt/do
 
 - 然后我们直接访问 gogs, (你的 IP):10080, 可以看到安装界面
 
-![](..\img\install-gogs\install-gogs-1.png)
+![](/img/install-gogs/install-gogs-1.png)
 
 修改数据库主机为 ： (虚拟机 IP) : (MySQL 端口号)
 
@@ -33,10 +33,10 @@ sudo docker run  -v /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime  -v /opt/do
 
 - 修改 Docker 配置的映射端口
 
-![](..\img\install-gogs\install-gogs-2.png)
+![](/img/install-gogs/install-gogs-2.png)
 
 接下来的选项根据自己需要来配置就 OK 了，添加一个管理员账号之后，点击完成安装就可以看到 gogs 的界面了。
 
 ---
 
-![](..\img\install-gogs\install-gogs-3.png)
+![](/img/install-gogs/install-gogs-3.png)
