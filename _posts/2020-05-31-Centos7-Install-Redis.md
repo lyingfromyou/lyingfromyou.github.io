@@ -8,8 +8,6 @@ tags:
   - Redis
 ---
 
-# Centos7 下面安装 Redis
-
 ### 更换 yum 源
 
 1. 安装 wget

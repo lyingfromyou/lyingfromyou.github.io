@@ -9,7 +9,6 @@ tags:
   - Centos7
 ---
 
-# Centos7 查找 JDK 地址
 
 1. 找到 java 执行文件路径
 

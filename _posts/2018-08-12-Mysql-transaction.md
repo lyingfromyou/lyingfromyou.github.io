@@ -9,7 +9,6 @@ tags:
   - Mysql
 ---
 
-# Mysql事务
 
 ### 事务特性(ACID)
 
