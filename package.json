@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "babel-plugin-inferno": "^6.2.0",
-    "bulma-stylus": "^0.8.0",
+    "bulma-stylus": "^0.9.1",
     "hexo": "^5.0.0",
     "hexo-component-inferno": "^0.11.3",
     "hexo-deployer-git": "^3.0.0",
