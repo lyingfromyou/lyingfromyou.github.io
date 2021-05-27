@@ -103,5 +103,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: https://github.com/lyingfromyou/max.github.io.git
-  branch: master
+  repo: https://github.com/lyingfromyou/lyingfromyou.github.io.git
+  branch: main
