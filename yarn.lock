@@ -1131,10 +1131,10 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-inferno@^6.1.0:
+babel-plugin-inferno@^6.1.0, babel-plugin-inferno@^6.2.0:
   version "6.2.0"
-  resolved "https://registry.npm.taobao.org/babel-plugin-inferno/download/babel-plugin-inferno-6.2.0.tgz#d98e4a675f72b47501a747f34b5170114da187e2"
-  integrity sha1-2Y5KZ19ytHUBp0fzS1FwEU2hh+I=
+  resolved "https://registry.yarnpkg.com/babel-plugin-inferno/-/babel-plugin-inferno-6.2.0.tgz#d98e4a675f72b47501a747f34b5170114da187e2"
+  integrity sha512-an1v65RWlOLqn9SxA3kgLLhgz8QIZx+Y/244JOFPNMarHgOwOnCg2knY8kA1qATFL8wiZeDRgUpiSw/nylULrw==
   dependencies:
     "@babel/plugin-syntax-jsx" "^7"
     "@babel/types" "^7"
@@ -1559,10 +1559,10 @@ buffer-from@^1.0.0:
   resolved "https://registry.npm.taobao.org/buffer-from/download/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha1-MnE7wCj3XAL9txDXx7zsHyxgcO8=
 
-bulma-stylus@0.8.0:
+bulma-stylus@^0.8.0:
   version "0.8.0"
-  resolved "https://registry.npm.taobao.org/bulma-stylus/download/bulma-stylus-0.8.0.tgz#137c182a1fdf9ac82f2e73bd3163aac454b105ae"
-  integrity sha1-E3wYKh/fmsgvLnO9MWOqxFSxBa4=
+  resolved "https://registry.yarnpkg.com/bulma-stylus/-/bulma-stylus-0.8.0.tgz#137c182a1fdf9ac82f2e73bd3163aac454b105ae"
+  integrity sha512-9Q9BMPeHFyJ5EWh/tJPCcLDYEovKzUBOyMHsKEIyxSYEKG8wqt9RVuTumaJ2AfDjyHC9OifWKOfJSweKYD5IMQ==
 
 bytes@3.0.0:
   version "3.0.0"
@@ -2107,10 +2107,10 @@ hexo-cli@^4.0.0:
     resolve "^1.11.0"
     tildify "^2.0.0"
 
-hexo-component-inferno@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.nlark.com/hexo-component-inferno/download/hexo-component-inferno-0.11.1.tgz#dbdc1ff30cd4f7ab4b8d70f74d31a5c766c287fe"
-  integrity sha1-29wf8wzU96tLjXD3TTGlx2bCh/4=
+hexo-component-inferno@^0.11.3:
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/hexo-component-inferno/-/hexo-component-inferno-0.11.3.tgz#7a25f073f1e76713906a1e43d8a9b02a7ff3d41f"
+  integrity sha512-F7rfACEo7BD0bUWGvfBIBva75FDSAxhr2MOtBQWcOXmXwkfrf2BpTsNtN3WQIX5yv3n5wzffrlA7/B6L1eBxdw==
   dependencies:
     ajv "^6.10.2"
     inferno "^7.3.3"
@@ -2191,10 +2191,10 @@ hexo-renderer-ejs@^1.0.0:
   dependencies:
     ejs "^2.6.1"
 
-hexo-renderer-inferno@0.1.3:
+hexo-renderer-inferno@^0.1.3:
   version "0.1.3"
-  resolved "https://registry.npm.taobao.org/hexo-renderer-inferno/download/hexo-renderer-inferno-0.1.3.tgz#9a83acf342c145e781e4812296f66d78e2d8f23e"
-  integrity sha1-moOs80LBReeB5IEilvZteOLY8j4=
+  resolved "https://registry.yarnpkg.com/hexo-renderer-inferno/-/hexo-renderer-inferno-0.1.3.tgz#9a83acf342c145e781e4812296f66d78e2d8f23e"
+  integrity sha512-crtisttRWnpNKmhscYPTDGOIT7txTQPre9QU4+WkIHKKO7RCjjIT+Qt62GzX5mb0px/BLd2P4gZ5TItNY6ig1g==
   dependencies:
     "@babel/core" "^7.7.7"
     "@babel/preset-env" "^7.7.7"
@@ -2307,14 +2307,7 @@ http-errors@~1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
-inferno-create-element@7.3.3:
-  version "7.3.3"
-  resolved "https://registry.npm.taobao.org/inferno-create-element/download/inferno-create-element-7.3.3.tgz#6a53084fad9689cb94aa40aede65ab15f690401a"
-  integrity sha1-alMIT62WicuUqkCu3mWrFfaQQBo=
-  dependencies:
-    inferno "7.3.3"
-
-inferno-create-element@^7.3.3:
+inferno-create-element@^7.3.3, inferno-create-element@^7.4.8:
   version "7.4.8"
   resolved "https://registry.npm.taobao.org/inferno-create-element/download/inferno-create-element-7.4.8.tgz#77bbf24288645c359cf65b4821a3938c6537eb5e"
   integrity sha1-d7vyQohkXDWc9ltIIaOTjGU3614=
@@ -2328,34 +2321,15 @@ inferno-server@^7.3.3:
   dependencies:
     inferno "7.4.8"
 
-inferno-shared@7.3.3:
-  version "7.3.3"
-  resolved "https://registry.npm.taobao.org/inferno-shared/download/inferno-shared-7.3.3.tgz#aa4b70a38d1f37498766f31c6a99f5c5dfc58b63"
-  integrity sha1-qktwo40fN0mHZvMcapn1xd/Fi2M=
-
 inferno-shared@7.4.8:
   version "7.4.8"
   resolved "https://registry.npm.taobao.org/inferno-shared/download/inferno-shared-7.4.8.tgz#2b554a36683b770339008749096d9704846dd337"
   integrity sha1-K1VKNmg7dwM5AIdJCW2XBIRt0zc=
 
-inferno-vnode-flags@7.3.3:
-  version "7.3.3"
-  resolved "https://registry.npm.taobao.org/inferno-vnode-flags/download/inferno-vnode-flags-7.3.3.tgz#aebaddea1569dd16512f44b92bf587837328db9d"
-  integrity sha1-rrrd6hVp3RZRL0S5K/WHg3Mo250=
-
 inferno-vnode-flags@7.4.8:
   version "7.4.8"
   resolved "https://registry.npm.taobao.org/inferno-vnode-flags/download/inferno-vnode-flags-7.4.8.tgz#275d70e3c8b2b3f4eb56041cc9b8c832ce1fb26d"
   integrity sha1-J11w48iys/TrVgQcybjIMs4fsm0=
-
-inferno@7.3.3:
-  version "7.3.3"
-  resolved "https://registry.npm.taobao.org/inferno/download/inferno-7.3.3.tgz#4098d5313c53281e44a857619764e74ab4438415"
-  integrity sha1-QJjVMTxTKB5EqFdhl2TnSrRDhBU=
-  dependencies:
-    inferno-shared "7.3.3"
-    inferno-vnode-flags "7.3.3"
-    opencollective-postinstall "^2.0.2"
 
 inferno@7.4.8, inferno@^7.3.3:
   version "7.4.8"
@@ -2743,7 +2717,7 @@ open@^7.0.0:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
 
-opencollective-postinstall@^2.0.2, opencollective-postinstall@^2.0.3:
+opencollective-postinstall@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/opencollective-postinstall/download/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
   integrity sha1-eg//l49tv6TQBiOPusmO1BmMMlk=
